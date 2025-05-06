@@ -3,8 +3,8 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
+let sourceFile = "input_3.jpg";
+let maskFile   = "mask_3.png";
 let outputFile = "output_1.png";
 
 function preload() {
@@ -19,7 +19,7 @@ function setup () {
 
   imageMode(CENTER);
   noStroke();
-  background(255, 0, 0);
+  background(255, 0, 255);
   sourceImg.loadPixels();
   maskImg.loadPixels();
 }
@@ -32,7 +32,7 @@ function draw () {
     let maskData = maskImg.get(x, y);
     fill(pixData);
     if(maskData[0] > 128) {
-      let pointSize = 10;
+      let pointSize = 3;
       ellipse(x, y, pointSize, pointSize);
     }
     else {
