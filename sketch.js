@@ -45,8 +45,8 @@ function draw () {
     rect(x, y, pointSize, pointSize);  
     }
     else { 
-      let new_brt = map(b, 0, 100, 50, 100);
-      let new_col = color(0, 0, new_brt);
+      let new_brightess = map(b, 0, 100, 50, 100);
+      let new_col = color(0, 0, new_brightness);
       let pointSize = 5;
       fill(new_col)
       ellipse(x, y, pointSize, pointSize);
