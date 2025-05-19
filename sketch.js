@@ -19,27 +19,41 @@ function setup () {
 
   imageMode(CENTER);
   noStroke();
-  background(255, 0, 255);
+  background(0, 0, 128);
   sourceImg.loadPixels();
   maskImg.loadPixels();
+  colorMode(HSB);
 }
 
 function draw () {
   for(let i=0;i<4000;i++) {
+    colorMode(RGB);
     let x = floor(random(sourceImg.width));
     let y = floor(random(sourceImg.height));
     let pixData = sourceImg.get(x, y);
+    let col = color(pixData);
     let maskData = maskImg.get(x, y);
     fill(pixData);
+
+    colorMode(HSB, 360, 100, 100);
+    let h = hue(col);
+    let s = saturation(col);
+    let b = brightness(col);
+
     if(maskData[0] > 128) {
-      let pointSize = 3;
+      let pointSize = 15;
+    rect(x, y, pointSize, pointSize);  
+    }
+    else { 
+      let new_brt = map(b, 0, 100, 50, 100);
+      let new_col = color(0, 0, new_brt);
+      let pointSize = 5;
+      fill(new_col)
       ellipse(x, y, pointSize, pointSize);
     }
-    else {
-      let pointSize = 20;
-      rect(x, y, pointSize, pointSize);    
-    }
   }
+}
+
   renderCounter = renderCounter + 1;
   if(renderCounter > 10) {
     console.log("Done!")
@@ -47,7 +61,6 @@ function draw () {
     // uncomment this to save the result
     // saveArtworkImage(outputFile);
   }
-}
 
 function keyTyped() {
   if (key == '!') {
