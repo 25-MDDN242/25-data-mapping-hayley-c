@@ -19,7 +19,7 @@ function setup () {
 
   imageMode(CENTER);
   noStroke();
-  background(0, 0, 128);
+  background(219, 219, 219);
   sourceImg.loadPixels();
   maskImg.loadPixels();
   colorMode(HSB);
@@ -45,10 +45,10 @@ function draw () {
     rect(x, y, pointSize, pointSize);  
     }
     else { 
-      let new_brightess = map(b, 0, 100, 50, 100);
-      let new_col = color(0, 0, new_brightness);
+      let newBrightness = map(b, 0, 100, 50, 100);
+      let newColour = color(0, 0, newBrightness);
       let pointSize = 5;
-      fill(new_col)
+      fill(newColour)
       ellipse(x, y, pointSize, pointSize);
     }
   }

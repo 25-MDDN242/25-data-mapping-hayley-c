@@ -6,3 +6,5 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 
 ### Precedents
 <img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "400px"/>
+<img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "400px"/>
+<img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "400px"/>
