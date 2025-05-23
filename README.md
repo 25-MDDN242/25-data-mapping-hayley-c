@@ -10,22 +10,22 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 <img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "400px"/>
 
 ### Images
-| Name | Orginigal Image | Attribution | URL |
+| Name | Orginal Image | Attribution | URL |
 | ---- | --------------- | ----------- | --- |
-| input_1 | Title | © Eber Barraza  | Title |
-| input_2 | Title |  | Title |
-| input_3 | Title | Header | Title |
-| input_4 | ![daisy](https://www.inaturalist.org/photos/337990) | © Donna Pomeroy | [	iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
-| input_5 | Title |  © Nicolas Schwab | Title |
-| input_6 | Title | © Yi CHEN | Title |
-| input_7 | Title |  © Milan Kovacevic | Title |
-| input_8 | Title | © bsteer | Title |
-| input_9 | Title |  © Milan Kovacevic | Title |
-| input_10 | Title | © Kat | Title |
-| input_new1 | Title | © Milan Kovacevic | Title |
-| input_new2 | Title | © tobypcr | Title |
-| input_new3 | Title | Header | Title |
-| input_new4 | Title | © Kat | Title |
-| input_new5 | Title | Header | Title |
-| input_new6 | Title | Header | Title |
+| input_1 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/61728710/medium.jpeg) | © Eber Barraza  | [iNaturalist Mexico](https://www.inaturalist.org/photos/61728710) |
+| input_2 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/271637974/medium.jpeg) | © vojtar | [iNaturalist](https://www.inaturalist.org/photos/271637974) |
+| input_3 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/478851874/medium.jpeg) | © valhera  | [iNaturalist](https://www.inaturalist.org/photos/478851874) |
+| input_4 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/41140535/medium.jpg) | © Donna Pomeroy | [iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
+| input_5 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.jpg) |  © Evan M. Raskin | [iNaturalist](https://www.inaturalist.org/photos/41140535) |
+| input_6 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/63293825/medium.jpg) | © Yi CHEN | Title |
+| input_7 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605272/medium.jpg) |  © Milan Kovacevic | [iNaturalist Canada](https://www.inaturalist.org/photos/388605272) |
+| input_8 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.jpg) | © bsteer | [iNaturalist Canada](https://www.inaturalist.org/photos/217876098)  |
+| input_9 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovacevic | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
+| input_10 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.JPG) | © Kat | Title |
+| input_new1 | [Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovacevic | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
+| input_new2 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © tobypcr | [iNaturalist](https://www.inaturalist.org/photos/21365414) |
+| input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508411783/large.jpg) | © Daniela Londoño | [iNaturalist](https://www.inaturalist.org/observations/282963690) |
+| input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |
+| input_new5 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508379088/medium.jpg) | © ࣪࣪ ִֶָ⋆˚࿔★• | [iNaturalist](https://www.inaturalist.org/photos/5083790880) |
+| input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
