@@ -15,7 +15,7 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 | input_1 | Title | © Eber Barraza  | Title |
 | input_2 | Title |  | Title |
 | input_3 | Title | Header | Title |
-| input_4 | <img src = "https://www.inaturalist.org/photos/337990" width = "50px"/> | © Donna Pomeroy | [	iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
+| input_4 | ![daisy](https://www.inaturalist.org/photos/337990) | © Donna Pomeroy | [	iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
 | input_5 | Title |  © Nicolas Schwab | Title |
 | input_6 | Title | © Yi CHEN | Title |
 | input_7 | Title |  © Milan Kovacevic | Title |
