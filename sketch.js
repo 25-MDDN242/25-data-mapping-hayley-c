@@ -4,9 +4,12 @@ let renderCounter=0;
 let curLayer = 0;
 
 // change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
+let sourceFile = "input_2.jpg";
+let maskFile   = "mask_2.png";
 let outputFile = "output_1.png";
+
+let maskCenter = null; 
+let maskCenterSize = null; 
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -19,11 +22,89 @@ function setup () {
   main_canvas.parent('canvasContainer');
 
   imageMode(CENTER);
+  rectMode(CENTER);
   noStroke();
   background(219, 219, 219);
   sourceImg.loadPixels();
   maskImg.loadPixels();
   colorMode(HSB);
+
+  maskCenterSearcher(20);
+  maskSizeFinder(20);
+}
+
+let X_STOP = 1920;
+let Y_STOP = 1080;
+let OFFSET = 20;
+
+function maskCenterSearcher(min_width) {
+  let mask_x_sum = 0;
+  let mask_y_sum = 0;
+  let mask_count = 0;
+ 
+  print("Scanning mask top to bottom...")
+ 
+  for(let j=0; j<Y_STOP; j++) {
+    for(let i=0; i<X_STOP; i++) {
+      let maskData = maskImg.get(i, j);
+      if (maskData[1] > 128) {
+        mask_x_sum = mask_x_sum + i;
+        mask_y_sum = mask_y_sum + j;
+        mask_count = mask_count + 1;
+      }
+    }
+  }
+ 
+  print("Mask Center Located!")
+ 
+  if (mask_count > min_width) {
+    let avg_x_pos = int(mask_x_sum / mask_count);
+    let avg_y_pos = int(mask_y_sum / mask_count);
+    maskCenter = [avg_x_pos, avg_y_pos];
+    print("Center set to: " + maskCenter);
+  }
+}
+
+function maskSizeFinder(min_width) {
+  let max_up_down = 0;
+  let max_left_right = 0;
+
+  print("Scanning mask top to bottom...")
+ 
+  for(let j=0; j<Y_STOP; j++) {
+    let mask_count = 0;
+    for(let i=0; i<X_STOP; i++) {
+      let mask = maskImg.get(i, j);
+      if (mask[1] > 128) {
+        mask_count = mask_count + 1;
+      }
+    }
+
+    if (mask_count > max_left_right) {
+      max_left_right = mask_count;
+    }
+  }
+
+  print("Scanning mask left to right...")
+ 
+  for(let i=0; i<X_STOP; i++) {
+    let mask_count = 0;
+    for(let j=0; j<Y_STOP; j++) {
+      let mask = maskImg.get(i, j);
+      if (mask[1] > 128) {
+        mask_count = mask_count + 1;
+      }
+    }
+    if (mask_count > max_up_down) {
+      max_up_down = mask_count;
+    }
+  }
+ 
+  print("Scanning mask done!")
+ 
+  if (max_left_right > min_width && max_up_down > min_width) {
+    maskCenterSize = [max_left_right, max_up_down];
+  }
 }
 
 function draw () {
@@ -70,24 +151,36 @@ function draw () {
       let x2 = x1 + random(-75, 75);
       let y2 = y1 + random(-40, 40);
 
-      rectMode(CORNERS);
       colorMode(RGB);
       // let x = floor(random(sourceImg.width));
       // let y = floor(random(sourceImg.height));
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
       fill(pixData);
+      noStroke();
 
       if(maskData[0] > 128) {
+        rectMode(CORNERS);
         rect(x1, y1, x2, y2);
         // set(x, y);
         // let pointSize = 15;
         // rect(x, y, pointSize, pointSize);  
       }
     }
+
+    console.log(maskCenterSize[0]);
   }
 
-
+  if (maskCenter !== null){
+    rectMode(CENTER);
+    strokeWeight(3);
+    stroke(255, 0, 0);
+    ellipse(maskCenter[0], maskCenter[1], 50, 50);
+    noFill();
+    let mcw = maskCenterSize[0];
+    let mch = maskCenterSize[1];
+    rect(maskCenter[0]-mcw/2, maskCenter[1]-mch/2, mcw, mch);
+  }
   
   renderCounter = renderCounter + 1;
   if(renderCounter > 1 && curLayer == 0) {
