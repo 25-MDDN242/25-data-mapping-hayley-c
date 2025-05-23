@@ -8,3 +8,24 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 <img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "400px"/>
 <img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "400px"/>
 <img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "400px"/>
+
+### Images
+| Name | Orginigal Image | Attribution | URL |
+| ---- | --------------- | ----------- | --- |
+| input_1 | Title | © Eber Barraza  | Title |
+| input_2 | Title |  | Title |
+| input_3 | Title | Header | Title |
+| input_4 | <img src = "https://www.inaturalist.org/photos/337990" width = "50px"/> | © Donna Pomeroy | [	iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
+| input_5 | Title |  © Nicolas Schwab | Title |
+| input_6 | Title | © Yi CHEN | Title |
+| input_7 | Title |  © Milan Kovacevic | Title |
+| input_8 | Title | © bsteer | Title |
+| input_9 | Title |  © Milan Kovacevic | Title |
+| input_10 | Title | © Kat | Title |
+| input_new1 | Title | © Milan Kovacevic | Title |
+| input_new2 | Title | © tobypcr | Title |
+| input_new3 | Title | Header | Title |
+| input_new4 | Title | © Kat | Title |
+| input_new5 | Title | Header | Title |
+| input_new6 | Title | Header | Title |
+
