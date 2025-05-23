@@ -22,7 +22,6 @@ function setup () {
   main_canvas.parent('canvasContainer');
 
   imageMode(CENTER);
-  rectMode(CENTER);
   noStroke();
   background(219, 219, 219);
   sourceImg.loadPixels();
@@ -167,19 +166,37 @@ function draw () {
         // rect(x, y, pointSize, pointSize);  
       }
     }
-
-    console.log(maskCenterSize[0]);
   }
 
   if (maskCenter !== null){
+    colorMode(RGB);
     rectMode(CENTER);
-    strokeWeight(3);
-    stroke(255, 0, 0);
-    ellipse(maskCenter[0], maskCenter[1], 50, 50);
+    strokeWeight(5);
+    stroke(255, 255, 255);
     noFill();
     let mcw = maskCenterSize[0];
     let mch = maskCenterSize[1];
-    rect(maskCenter[0]-mcw/2, maskCenter[1]-mch/2, mcw, mch);
+    rect(maskCenter[0], maskCenter[1], mcw, mch);
+    line(maskCenter[0] - mcw/2, maskCenter[1], maskCenter[0] - mcw/2 + 25, maskCenter[1]);
+    line(maskCenter[0] + mcw/2, maskCenter[1], maskCenter[0] + mcw/2 - 25, maskCenter[1]);
+    line(maskCenter[0], maskCenter[1] - mch/2, maskCenter[0], maskCenter[1] - mch/2 + 25);
+    line(maskCenter[0], maskCenter[1] + mch/2, maskCenter[0], maskCenter[1]  + mch/2 - 25);
+
+    let pixData = sourceImg.get(mcw, mch);
+    textSize(24);
+    let label = 'flower';
+    let labelWidth = textWidth(label) + 2;
+    rectMode(CORNER);
+    noStroke();
+    fill(pixData);
+    rect(maskCenter[0] - mcw/2 - 2, maskCenter[1] - mch/2 - 30, labelWidth, 24);
+
+    rectMode(CENTER);
+    noFill();
+    stroke(255, 255, 255);
+    strokeWeight(2);
+    textFont('Courier New');
+    text('flower', maskCenter[0] - mcw/2, maskCenter[1] - mch/2 - 10);
   }
   
   renderCounter = renderCounter + 1;
