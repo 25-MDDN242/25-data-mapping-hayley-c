@@ -15,14 +15,14 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 | input_1 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/61728710/medium.jpeg) | © Eber Barraza  | [iNaturalist Mexico](https://www.inaturalist.org/photos/61728710) |
 | input_2 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/271637974/medium.jpeg) | © vojtar | [iNaturalist](https://www.inaturalist.org/photos/271637974) |
 | input_3 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/478851874/medium.jpeg) | © valhera  | [iNaturalist](https://www.inaturalist.org/photos/478851874) |
-| input_4 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/41140535/medium.jpg) | © Donna Pomeroy | [iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
+| input_4 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.JPG) | © Donna Pomeroy | [iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
 | input_5 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/41140535/medium.jpg) |  © Evan M. Raskin | [iNaturalist](https://www.inaturalist.org/photos/41140535) |
 | input_6 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/63293825/medium.jpg) | © Yi CHEN | Title |
 | input_7 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605272/medium.jpg) |  © Milan Kovačević  | [iNaturalist Canada](https://www.inaturalist.org/photos/388605272) |
-| input_8 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.jpg) | © bsteer | [iNaturalist Canada](https://www.inaturalist.org/photos/217876098)  |
+| input_8 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/217876098/medium.jpeg) | © bsteer | [iNaturalist Canada](https://www.inaturalist.org/photos/217876098)  |
 | input_9 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovačević  | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
 | input_10 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/40495365/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40495365)  |
-| input_new1 | [Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovačević | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
+| input_new1 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovačević | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
 | input_new2 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © tobypcr | [iNaturalist](https://www.inaturalist.org/photos/21365414) |
 | input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508411783/large.jpg) | © Daniela Londoño | [iNaturalist](https://www.inaturalist.org/observations/282963690) |
 | input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |

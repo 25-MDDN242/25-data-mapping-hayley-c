@@ -127,46 +127,32 @@ function draw () {
     updatePixels();
   }
 
-  // if(curLayer == 1){
-  //   for(let i=0;i<200;i++) {
-  //     colorMode(RGB);
-  //     let x = floor(random(sourceImg.width));
-  //     let y = floor(random(sourceImg.height));
-  //     let pixData = sourceImg.get(x1, y1);
-  //     let maskData = maskImg.get(x1, y1);
-  //     fill(pixData);
-
-  //     if(maskData[0] > 128) {
-  //       set(i, j);
-  //       // ellipse(x, y, 1, 1);
-  //     }
-  //   }
-  // }
-
   if(curLayer == 1){
-    for(let i=0;i<200;i++) {
-      let x1 = random(0, width);
-      let y1 = random(0, height);
-      let x2 = x1 + random(-75, 75);
-      let y2 = y1 + random(-40, 40);
+
+      // let x1 = random(0, width);
+      // let y1 = random(0, height);
+      // let x2 = x1 + random(-75, 75);
+      // let y2 = y1 + random(-40, 40);
 
       colorMode(RGB);
-      // let x = floor(random(sourceImg.width));
-      // let y = floor(random(sourceImg.height));
+      let x = floor(random(sourceImg.width));
+      let y = floor(random(sourceImg.height));
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
       fill(pixData);
       noStroke();
 
       if(maskData[0] > 128) {
-        rectMode(CORNERS);
-        rect(x1, y1, x2, y2);
+      ellipse(x, y, 5, 5);
+
+        // rectMode(CORNERS);
+        // rect(x1, y1, x2, y2);
         // set(x, y);
         // let pointSize = 15;
         // rect(x, y, pointSize, pointSize);  
       }
     }
-  }
+  
 
   if (maskCenter !== null){
     colorMode(RGB);
