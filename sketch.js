@@ -128,11 +128,11 @@ function draw () {
   }
 
   if(curLayer == 1){
-
-      // let x1 = random(0, width);
-      // let y1 = random(0, height);
-      // let x2 = x1 + random(-75, 75);
-      // let y2 = y1 + random(-40, 40);
+    for(let i=0;i<200;i++) {
+      let x1 = random(0, width);
+      let y1 = random(0, height);
+      let x2 = x1 + random(-75, 75);
+      let y2 = y1 + random(-40, 40);
 
       colorMode(RGB);
       let x = floor(random(sourceImg.width));
@@ -143,15 +143,14 @@ function draw () {
       noStroke();
 
       if(maskData[0] > 128) {
-      ellipse(x, y, 5, 5);
-
-        // rectMode(CORNERS);
-        // rect(x1, y1, x2, y2);
+        rectMode(CORNERS);
+        rect(x1, y1, x2, y2);
         // set(x, y);
         // let pointSize = 15;
         // rect(x, y, pointSize, pointSize);  
       }
     }
+  }
   
 
   if (maskCenter !== null){
