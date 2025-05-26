@@ -113,18 +113,42 @@ function draw () {
         let x = row;
         let y = col; 
         let pixData = sourceImg.get(x, y);
-        let c = color(pixData);
+        let maskData = maskImg.get(x, y);
         colorMode(HSB, 360, 100, 100);
-        let b = brightness(c);
 
-        let newBrightness = map(b, 0, 100, 50, 100);
-        let newColour = color(0, 0, newBrightness);
+        if(maskData[0] > 128) {
+          fill(pixData);
+          set(x, y, pixData);
+        }
+        else {
+          let c = color(pixData);
+          let b = brightness(c);
 
-        fill(newColour);
-        set(x, y,newColour);
+          let newBrightness = map(b, 0, 100, 50, 100);
+          let newColour = color(0, 0, newBrightness);
+
+          fill(newColour);
+          set(x, y,newColour);
+        }
       }
     }
     updatePixels();
+
+    // for(let i=0;i<4000;i++) {
+    //   let x = floor(random(sourceImg.width));
+    //   let y = floor(random(sourceImg.height));
+    //   let pixData = sourceImg.get(x, y);
+    //   let maskData = maskImg.get(x, y);
+    //   fill(pixData);
+    //   noStroke();
+
+    //   if(maskData[0] > 128) {
+    //     ellipse(x, y, 10, 10);
+    //     // set(x, y);
+    //     // let pointSize = 15;
+    //     // rect(x, y, pointSize, pointSize);  
+    //   }
+    // }
   }
 
   if(curLayer == 1){
