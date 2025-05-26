@@ -123,32 +123,14 @@ function draw () {
         else {
           let c = color(pixData);
           let b = brightness(c);
-
           let newBrightness = map(b, 0, 100, 50, 100);
           let newColour = color(0, 0, newBrightness);
-
           fill(newColour);
           set(x, y,newColour);
         }
       }
     }
     updatePixels();
-
-    // for(let i=0;i<4000;i++) {
-    //   let x = floor(random(sourceImg.width));
-    //   let y = floor(random(sourceImg.height));
-    //   let pixData = sourceImg.get(x, y);
-    //   let maskData = maskImg.get(x, y);
-    //   fill(pixData);
-    //   noStroke();
-
-    //   if(maskData[0] > 128) {
-    //     ellipse(x, y, 10, 10);
-    //     // set(x, y);
-    //     // let pointSize = 15;
-    //     // rect(x, y, pointSize, pointSize);  
-    //   }
-    // }
   }
 
   if(curLayer == 1){
@@ -156,7 +138,7 @@ function draw () {
       let x1 = random(0, width);
       let y1 = random(0, height);
       let x2 = x1 + random(-75, 75);
-      let y2 = y1 + random(-40, 40);
+      let y2 = y1 + random(-50, 50);
 
       colorMode(RGB);
       let x = floor(random(sourceImg.width));
@@ -169,9 +151,6 @@ function draw () {
       if(maskData[0] > 128) {
         rectMode(CORNERS);
         rect(x1, y1, x2, y2);
-        // set(x, y);
-        // let pointSize = 15;
-        // rect(x, y, pointSize, pointSize);  
       }
     }
   }
