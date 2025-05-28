@@ -117,6 +117,31 @@ function draw () {
         colorMode(HSB, 360, 100, 100);
 
         if(maskData[0] > 128) {
+          angleMode(DEGREES);
+          let num_lines_to_draw = 40;
+          // get one scanline
+          for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
+            for(let i=0; i<X_STOP; i++) {
+              colorMode(RGB);
+              let mask = maskImg.get(i, j);
+              if (mask[1] < 128) {
+                pix = sourceImg.get(i, j);
+              }
+              else {
+                let wave = sin(j*8);
+                let slip = map(wave, -1, 1, -OFFSET, OFFSET);
+                pix = sourceImg.get(i+slip, j);
+        
+                // let brt = map(wave, -1, 1, 0, 255);
+                // for(let c=0; c<3; c++) {
+                //   pix[c] = brt;
+                // }
+              }
+        
+              set(i, j, pix);
+            }
+          }
+        
           fill(pixData);
           set(x, y, pixData);
         }
@@ -141,17 +166,15 @@ function draw () {
       let y2 = y1 + random(-50, 50);
 
       colorMode(RGB);
-      let x = floor(random(sourceImg.width));
-      let y = floor(random(sourceImg.height));
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
       fill(pixData);
       noStroke();
 
-      if(maskData[0] > 128) {
-        rectMode(CORNERS);
-        rect(x1, y1, x2, y2);
-      }
+      // if(maskData[0] > 128) {
+      //   rectMode(CORNERS);
+      //   rect(x1, y1, x2, y2);
+      // }
     }
   }
   
