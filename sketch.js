@@ -117,12 +117,23 @@ function draw () {
         colorMode(HSB, 360, 100, 100);
 
         if(maskData[0] > 128) {
-          angleMode(DEGREES);
+          let rowSize = 25;
+          for (let y= 0; y < height; y = y + rowSize){
+          let sourceX = 0 + random(10);
+          let sourceY = y;
+          let sourceW = width;
+          let sourceH = rowSize;
+          let destX = 0;
+          let  destY = y;
+          let destW = width;
+          let destH = rowSize;
+          // angleMode(DEGREES);
           fill(pixData);
-          let wave = sin(y*8);
-          let slip = map(wave, -1, 1, -OFFSET, OFFSET);
-          pix = sourceImg.get(x+slip, y);
-          set(x, y, pix, pixData);
+          // let wave = sin(y*8);
+          // let slip = map(wave, -1, 1, -OFFSET, OFFSET);
+          // pix = sourceImg.get(x+slip, y);
+          set(x, y, destX, destY, destW, destH, sourceX, sourceY, sourceW, sourceH, pixData);
+          }
         }
         else {
           let c = color(pixData);
