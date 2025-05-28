@@ -4,8 +4,8 @@ let renderCounter=0;
 let curLayer = 0;
 
 // change these three lines as appropiate
-let sourceFile = "input_2.jpg";
-let maskFile   = "mask_2.png";
+let sourceFile = "input_1.jpg";
+let maskFile   = "mask_1.png";
 let outputFile = "output_1.png";
 
 let maskCenter = null; 
@@ -118,32 +118,11 @@ function draw () {
 
         if(maskData[0] > 128) {
           angleMode(DEGREES);
-          let num_lines_to_draw = 40;
-          // get one scanline
-          for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
-            for(let i=0; i<X_STOP; i++) {
-              colorMode(RGB);
-              let mask = maskImg.get(i, j);
-              if (mask[1] < 128) {
-                pix = sourceImg.get(i, j);
-              }
-              else {
-                let wave = sin(j*8);
-                let slip = map(wave, -1, 1, -OFFSET, OFFSET);
-                pix = sourceImg.get(i+slip, j);
-        
-                // let brt = map(wave, -1, 1, 0, 255);
-                // for(let c=0; c<3; c++) {
-                //   pix[c] = brt;
-                // }
-              }
-        
-              set(i, j, pix);
-            }
-          }
-        
           fill(pixData);
-          set(x, y, pixData);
+          let wave = sin(y*8);
+          let slip = map(wave, -1, 1, -OFFSET, OFFSET);
+          pix = sourceImg.get(x+slip, y);
+          set(x, y, pix, pixData);
         }
         else {
           let c = color(pixData);
@@ -166,15 +145,17 @@ function draw () {
       let y2 = y1 + random(-50, 50);
 
       colorMode(RGB);
+      let x = floor(random(sourceImg.width));
+      let y = floor(random(sourceImg.height));
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
       fill(pixData);
       noStroke();
 
-      // if(maskData[0] > 128) {
-      //   rectMode(CORNERS);
-      //   rect(x1, y1, x2, y2);
-      // }
+      if(maskData[0] > 128) {
+        rectMode(CORNERS);
+        rect(x1, y1, x2, y2);
+      }
     }
   }
   
@@ -195,7 +176,7 @@ function draw () {
 
     let pixData = sourceImg.get(mcw, mch);
     textSize(24);
-    let label = 'flower';
+    let label = 'rose';
     let labelWidth = textWidth(label) + 2;
     rectMode(CORNER);
     noStroke();
@@ -207,7 +188,7 @@ function draw () {
     stroke(255, 255, 255);
     strokeWeight(2);
     textFont('Courier New');
-    text('flower', maskCenter[0] - mcw/2, maskCenter[1] - mch/2 - 10);
+    text('rose', maskCenter[0] - mcw/2, maskCenter[1] - mch/2 - 10);
   }
   
   renderCounter = renderCounter + 1;
