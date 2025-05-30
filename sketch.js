@@ -117,23 +117,8 @@ function draw () {
         colorMode(HSB, 360, 100, 100);
 
         if(maskData[0] > 128) {
-          let rowSize = 25;
-          for (let y= 0; y < height; y = y + rowSize){
-          let sourceX = 0 + random(10);
-          let sourceY = y;
-          let sourceW = width;
-          let sourceH = rowSize;
-          let destX = 0;
-          let  destY = y;
-          let destW = width;
-          let destH = rowSize;
-          // angleMode(DEGREES);
           fill(pixData);
-          // let wave = sin(y*8);
-          // let slip = map(wave, -1, 1, -OFFSET, OFFSET);
-          // pix = sourceImg.get(x+slip, y);
-          set(x, y, destX, destY, destW, destH, sourceX, sourceY, sourceW, sourceH, pixData);
-          }
+          set(x, y, pixData);
         }
         else {
           let c = color(pixData);
@@ -149,15 +134,13 @@ function draw () {
   }
 
   if(curLayer == 1){
-    for(let i=0;i<200;i++) {
+    for(let i=0;i<50;i++) {
       let x1 = random(0, width);
       let y1 = random(0, height);
       let x2 = x1 + random(-75, 75);
       let y2 = y1 + random(-50, 50);
 
       colorMode(RGB);
-      let x = floor(random(sourceImg.width));
-      let y = floor(random(sourceImg.height));
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
       fill(pixData);
@@ -167,6 +150,9 @@ function draw () {
         rectMode(CORNERS);
         rect(x1, y1, x2, y2);
       }
+
+      imageMode(CORNERS);
+      copy(sourceImg, x1, y1, 10, 10, x2, y2, 50, 50);
     }
   }
   
