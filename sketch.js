@@ -4,9 +4,9 @@ let renderCounter=0;
 let curLayer = 0;
 
 // change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
-let outputFile = "output_1.png";
+let sourceFile = "input_5.jpg";
+let maskFile   = "mask_5.png";
+let outputFile = "output_5.png";
 
 let maskCenter = null; 
 let maskCenterSize = null; 
@@ -134,7 +134,18 @@ function draw () {
   }
 
   if(curLayer == 1){
-    for(let i=0;i<50;i++) {
+    for(let i=0;i<15;i++) {
+      colorMode(RGB, 100);
+
+      let sourceX = random(0, width);
+      let sourceY = random(0, height);
+      let sourceW = random(-50, 50);
+      let sourceH = random(-50, 50);
+      let destX = random(0, width);
+      let destY = random(0, height);
+      let destW = random(-200, 200);
+      let destH = random(-200, 200);
+
       let x1 = random(0, width);
       let y1 = random(0, height);
       let x2 = x1 + random(-75, 75);
@@ -143,16 +154,15 @@ function draw () {
       colorMode(RGB);
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
-      fill(pixData);
+      fill(pixData, 50);
       noStroke();
 
       if(maskData[0] > 128) {
+        imageMode(CORNERS);
+        copy(sourceImg, x1, y1, sourceW, sourceH, x2, y2, destW, destH);
         rectMode(CORNERS);
         rect(x1, y1, x2, y2);
       }
-
-      imageMode(CORNERS);
-      copy(sourceImg, x1, y1, 10, 10, x2, y2, 50, 50);
     }
   }
   
