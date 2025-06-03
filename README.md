@@ -23,9 +23,10 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 | input_9 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovačević  | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
 | input_10 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/40495365/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40495365)  |
 | input_new1 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovačević | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
-| input_new2 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © tobypcr | [iNaturalist](https://www.inaturalist.org/photos/21365414) |
-| input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508411783/large.jpg) | © Daniela Londoño | [iNaturalist](https://www.inaturalist.org/observations/282963690) |
+| input_new2 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/429269785/medium.jpg) | © Татьяна Химера | [iNaturalist](https://www.inaturalist.org/photos/429269785) |
+| input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/273663408/small.jpeg) | © Eric Johnson | [iNaturalist](https://www.inaturalist.org/photos/273663408) |
 | input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |
 | input_new5 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508379088/medium.jpg) | © ࣪࣪ ִֶָ⋆˚࿔★• | [iNaturalist](https://www.inaturalist.org/photos/5083790880) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
+### Masks

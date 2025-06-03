@@ -2,14 +2,14 @@ let sourceImg=null;
 let maskImg=null;
 let renderCounter=0;
 let curLayer = 0;
+let maskCenter = null; 
+let maskCenterSize = null; 
+let rectRepeat = [];
 
 // change these three lines as appropiate
 let sourceFile = "input_5.jpg";
 let maskFile   = "mask_5.png";
 let outputFile = "output_5.png";
-
-let maskCenter = null; 
-let maskCenterSize = null; 
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -30,6 +30,10 @@ function setup () {
 
   maskCenterSearcher(20);
   maskSizeFinder(20);
+
+  for (let x = 20; x < 100; x += 20) {
+    rectRepeat.push(x);
+  }
 }
 
 let X_STOP = 1920;
@@ -125,8 +129,7 @@ function draw () {
           let b = brightness(c);
           let newBrightness = map(b, 0, 100, 50, 100);
           let newColour = color(0, 0, newBrightness);
-          fill(newColour);
-          set(x, y,newColour);
+          set(x, y, newColour);
         }
       }
     }
@@ -137,31 +140,59 @@ function draw () {
     for(let i=0;i<15;i++) {
       colorMode(RGB, 100);
 
-      let sourceX = random(0, width);
-      let sourceY = random(0, height);
       let sourceW = random(-50, 50);
       let sourceH = random(-50, 50);
-      let destX = random(0, width);
-      let destY = random(0, height);
       let destW = random(-200, 200);
       let destH = random(-200, 200);
 
       let x1 = random(0, width);
       let y1 = random(0, height);
-      let x2 = x1 + random(-75, 75);
-      let y2 = y1 + random(-50, 50);
+      let x2 = x1 + random(-100, 100);
+      let y2 = y1 + random(-75, 75);
 
-      colorMode(RGB);
+
       let pixData = sourceImg.get(x1, y1);
       let maskData = maskImg.get(x1, y1);
-      fill(pixData, 50);
       noStroke();
 
       if(maskData[0] > 128) {
         imageMode(CORNERS);
+        fill(pixData);
         copy(sourceImg, x1, y1, sourceW, sourceH, x2, y2, destW, destH);
+      }
+    }
+
+    for(let i=0;i<5;i++) {
+      colorMode(RGB, 100);
+
+      let x1 = random(0, width);
+      let y1 = random(0, height);
+      let x2 = x1 + random(-100, 100);
+      let y2 = y1 + random(-75, 75);
+
+      let maskData = maskImg.get(x1, y1);
+      noStroke();
+
+      if(maskData[0] > 128) { 
+      
         rectMode(CORNERS);
+        colorMode(HSB, 360, 100, 100);
+        let mcw = maskCenterSize[0];
+        let mch = maskCenterSize[1];
+        let selectCenter = sourceImg.get(mcw, mch);
+        let c = color(selectCenter);
+        let hueValue = hue(c);
+        let mapHue = map(hueValue, 0, 360, 0, 120);
+        let newHue = 300 - mapHue;
+        let invertHue = color(newHue, 100, 100);
+        fill(invertHue);
         rect(x1, y1, x2, y2);
+        for(let i=0;i<1;i++) {
+          for (let i = 0; i < rectRepeat.length; i += 1) {
+            rectMode(CORNER);
+            rect(x1 + rectRepeat[i], y1, 15, 40);
+          }
+        }
       }
     }
   }
