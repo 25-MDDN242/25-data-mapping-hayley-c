@@ -111,8 +111,11 @@ function maskSizeFinder(min_width) {
 }
 
 function draw () {
+  let maskWidth = maskCenterSize[0];
+  let maskHeight = maskCenterSize[1];
+
   if(curLayer == 0){
-    for(let row=0;row<width;row++) {
+    for(let row=0; row<width; row++) {
         for(let col = 0; col < height; col++){
         let x = row;
         let y = col; 
@@ -120,16 +123,18 @@ function draw () {
         let maskData = maskImg.get(x, y);
         colorMode(HSB, 360, 100, 100);
 
+        // use image colours for masked area
         if(maskData[0] > 128) {
           fill(pixData);
-          set(x, y, pixData);
+          set(x, y, pixData); // image colour masked area pixels
         }
+        // grayscale background filter
         else {
           let c = color(pixData);
           let b = brightness(c);
           let newBrightness = map(b, 0, 100, 50, 100);
           let newColour = color(0, 0, newBrightness);
-          set(x, y, newColour);
+          set(x, y, newColour); // grayscale background pixels
         }
       }
     }
@@ -137,13 +142,13 @@ function draw () {
   }
 
   if(curLayer == 1){
-    for(let i=0;i<15;i++) {
+    for(let i=0; i<2 ; i++) {
       colorMode(RGB, 100);
 
-      let sourceW = random(-50, 50);
-      let sourceH = random(-50, 50);
-      let destW = random(-200, 200);
-      let destH = random(-200, 200);
+      let sourceWidth = random(-50, 50); // 
+      let sourceHeight = random(-50, 50); //
+      let destWidth = random(-200, 200); //
+      let destHeight = random(-200, 200); //
 
       let x1 = random(0, width);
       let y1 = random(0, height);
@@ -158,35 +163,21 @@ function draw () {
       if(maskData[0] > 128) {
         imageMode(CORNERS);
         fill(pixData);
-        copy(sourceImg, x1, y1, sourceW, sourceH, x2, y2, destW, destH);
-      }
-    }
+        copy(sourceImg, x1, y1, sourceWidth, sourceHeight, x2, y2, destWidth, destHeight);
 
-    for(let i=0;i<5;i++) {
-      colorMode(RGB, 100);
-
-      let x1 = random(0, width);
-      let y1 = random(0, height);
-      let x2 = x1 + random(-100, 100);
-      let y2 = y1 + random(-75, 75);
-
-      let maskData = maskImg.get(x1, y1);
-      noStroke();
-
-      if(maskData[0] > 128) { 
-      
         rectMode(CORNERS);
         colorMode(HSB, 360, 100, 100);
-        let mcw = maskCenterSize[0];
-        let mch = maskCenterSize[1];
-        let selectCenter = sourceImg.get(mcw, mch);
+
+        let selectCenter = sourceImg.get(maskWidth, maskHeight);
         let c = color(selectCenter);
         let hueValue = hue(c);
         let mapHue = map(hueValue, 0, 360, 0, 120);
         let newHue = 300 - mapHue;
         let invertHue = color(newHue, 100, 100);
+
         fill(invertHue);
         rect(x1, y1, x2, y2);
+
         for(let i=0;i<1;i++) {
           for (let i = 0; i < rectRepeat.length; i += 1) {
             rectMode(CORNER);
@@ -196,7 +187,6 @@ function draw () {
       }
     }
   }
-  
 
   if (maskCenter !== null){
     colorMode(RGB);
@@ -204,29 +194,27 @@ function draw () {
     strokeWeight(5);
     stroke(255, 255, 255);
     noFill();
-    let mcw = maskCenterSize[0];
-    let mch = maskCenterSize[1];
-    rect(maskCenter[0], maskCenter[1], mcw, mch);
-    line(maskCenter[0] - mcw/2, maskCenter[1], maskCenter[0] - mcw/2 + 25, maskCenter[1]);
-    line(maskCenter[0] + mcw/2, maskCenter[1], maskCenter[0] + mcw/2 - 25, maskCenter[1]);
-    line(maskCenter[0], maskCenter[1] - mch/2, maskCenter[0], maskCenter[1] - mch/2 + 25);
-    line(maskCenter[0], maskCenter[1] + mch/2, maskCenter[0], maskCenter[1]  + mch/2 - 25);
+    rect(maskCenter[0], maskCenter[1], maskWidth, maskHeight);
+    line(maskCenter[0] - maskWidth/2, maskCenter[1], maskCenter[0] - maskWidth/2 + 25, maskCenter[1]);
+    line(maskCenter[0] + maskWidth/2, maskCenter[1], maskCenter[0] + maskWidth/2 - 25, maskCenter[1]);
+    line(maskCenter[0], maskCenter[1] - maskHeight/2, maskCenter[0], maskCenter[1] - maskHeight/2 + 25);
+    line(maskCenter[0], maskCenter[1] + maskHeight/2, maskCenter[0], maskCenter[1]  + maskHeight/2 - 25);
 
-    let pixData = sourceImg.get(mcw, mch);
+    let pixData = sourceImg.get(maskWidth, maskHeight);
     textSize(24);
     let label = 'rose';
     let labelWidth = textWidth(label) + 2;
     rectMode(CORNER);
     noStroke();
     fill(pixData);
-    rect(maskCenter[0] - mcw/2 - 2, maskCenter[1] - mch/2 - 30, labelWidth, 24);
+    rect(maskCenter[0] - maskWidth/2 - 2, maskCenter[1] - maskHeight/2 - 30, labelWidth, 24);
 
     rectMode(CENTER);
     noFill();
     stroke(255, 255, 255);
     strokeWeight(2);
     textFont('Courier New');
-    text('rose', maskCenter[0] - mcw/2, maskCenter[1] - mch/2 - 10);
+    text('rose', maskCenter[0] - maskWidth/2, maskCenter[1] - maskHeight/2 - 10);
   }
   
   renderCounter = renderCounter + 1;

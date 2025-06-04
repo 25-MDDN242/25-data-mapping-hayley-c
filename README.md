@@ -2,7 +2,14 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19435023&assignment_repo_type=AssignmentRepo)
 ## Creative Coding + AI II: Custom Pixel
 
-The images above are photos of Wellington CBD algorithmically processed with a lightly modified version of the [p5.js Pointillism example](https://p5js.org/examples/image-pointillism.html). The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm.
+<!-- The images above are photos of Wellington CBD algorithmically processed with a lightly modified version of the [p5.js Pointillism example](https://p5js.org/examples/image-pointillism.html). The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm. -->
+
+input_5
+input_7
+input_8
+input_new2
+input_new3
+input_new4
 
 ### Precedents
 <img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "300px"/>
@@ -23,10 +30,30 @@ The images above are photos of Wellington CBD algorithmically processed with a l
 | input_9 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovačević  | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
 | input_10 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/40495365/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40495365)  |
 | input_new1 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovačević | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
-| input_new2 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/429269785/medium.jpg) | © Татьяна Химера | [iNaturalist](https://www.inaturalist.org/photos/429269785) |
+| input_new2 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/429269785/medium.jpg) | © Татьяна Химера | [iNaturalist](https://www.inaturalist.org/photos/429269785) |
 | input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/273663408/small.jpeg) | © Eric Johnson | [iNaturalist](https://www.inaturalist.org/photos/273663408) |
 | input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |
-| input_new5 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508379088/medium.jpg) | © ࣪࣪ ִֶָ⋆˚࿔★• | [iNaturalist](https://www.inaturalist.org/photos/5083790880) |
+| input_new5 | [!Dasiy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/photos/40713926) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
 ### Masks
+
+For my final submission, I have chosen to use the AI masks created from inputnew2, input_new3, and input_new4. The AI camera was able to identify the flowers' shape well, however for my specific pixel processing filter the cleaner mask outlines provided better results.
+
+
+
+### Other Outputs
+
+input_1
+input_2
+input_3
+input_4
+input_6
+input_9
+input_10
+
+input_new1
+input_new5
+input_new6
+
+
