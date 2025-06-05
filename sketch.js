@@ -1,14 +1,16 @@
-let sourceImg=null;
-let maskImg=null;
-let renderCounter=0;
+let sourceImg = null;
+let maskImg = null;
+let renderCounter = 0;
 let curLayer = 0;
 let maskCenter = null; 
 let maskCenterSize = null; 
 let rectRepeat = [];
 
+let loopCounter = 0;
+
 // change these three lines as appropiate
 let sourceFile = "input_new2.jpg";
-let maskFile   = "mask_new2.png";
+let maskFile = "mask_new2.png";
 let outputFile = "output_5.png";
 
 function preload() {
@@ -139,12 +141,13 @@ function draw () {
         }
       }
     }
+    renderCounter = renderCounter + 1;
     updatePixels();
   }
 
   // glitch effects 
   if(curLayer == 1){
-    for(let i = 0; i < 4 ; i++) {
+    for(let i = 0; i < 5 ; i++) {
 
       // copy image regions 
       let sourceWidth = random(-50, 50); // copy source width
@@ -183,13 +186,17 @@ function draw () {
           rectMode(CORNER);
           rect(x1 + rectRepeat[i], y1, 15, 40);
         }
+        loopCounter++ ;
+        console.log(loopCounter);
       }
+      renderCounter = renderCounter + 1;
     }
-    renderCounter = renderCounter + 1;
   }
+
 
   // mask scanner focus rectangle
   if (maskCenter !== null){
+    // focus rectangle
     colorMode(RGB);
     rectMode(CENTER);
     strokeWeight(5); // scan line weight
@@ -201,12 +208,14 @@ function draw () {
     line(maskCenter[0], maskCenter[1] - maskHeight/2, maskCenter[0], maskCenter[1] - maskHeight/2 + 25); // scan top line
     line(maskCenter[0], maskCenter[1] + maskHeight/2, maskCenter[0], maskCenter[1]  + maskHeight/2 - 25); // scan bottom line
 
+    // label background
     let labelWidth = textWidth('rose') + 2; // label backing width 
     rectMode(CORNER);
     noStroke();
     fill(maskCenterPixel); // centre mask pixel colour
     rect(maskCenter[0] - maskWidth/2 - 2, maskCenter[1] - maskHeight/2 - 30, labelWidth, 24); // label backing
 
+    // label text
     rectMode(CENTER);
     noFill();
     stroke(255, 255, 255); // white text
@@ -215,19 +224,19 @@ function draw () {
     textFont('Courier New'); // courier new typeface
     text('rose', maskCenter[0] - maskWidth/2, maskCenter[1] - maskHeight/2 - 10); // text and text location 
   }
-  
   renderCounter = renderCounter + 1;
+
   if(renderCounter > 1 && curLayer == 0) {
   renderCounter = 0; 
   curLayer = 1;
   console.log("change to layer 1")
   }
-  if(renderCounter > 4 && curLayer == 1) {
-    renderCounter = 0; 
+
+  if(renderCounter > 5 && curLayer == 1) {
     console.log("Done!")
     noLoop();
-  // uncomment this to save the result
-  // saveArtworkImage(outputFile);
+    // uncomment this to save the result
+    // saveArtworkImage(outputFile);
   }
 }
 
