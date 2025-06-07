@@ -9,8 +9,8 @@ let rectRepeat = [];
 let loopCounter = 0;
 
 // change these three lines as appropiate
-let sourceFile = "input_new2.jpg";
-let maskFile = "mask_new2.png";
+let sourceFile = "input_5.jpg";
+let maskFile = "mask_5.png";
 let outputFile = "output_5.png";
 
 function preload() {
@@ -130,7 +130,20 @@ function draw () {
         // image colours for masked area
         if(maskData[0] > 128) {
           fill(pixData);
-          set(x, y, pixData); // image colour masked area pixels
+          let wavinessX = 2.5;  // smaller number = fewer repetitions
+          let wavinessY = 2.5;
+          let periodX =   2.5;  // smaller number = more
+          let periodY =   2.5;
+          let tempX = x + wavinessX * sin(x/periodX);
+          let tempY = y + wavinessY * cos(y/periodY);
+          square = sourceImg.get(tempX, tempY);
+          // let waveX = sin(y*1.5);
+          // let slipX = map(waveX, -.5, .5, -OFFSET, OFFSET);
+          // let waveY = cos(x*1.5);
+          // let slipY = map(waveY, -.5, .5, -OFFSET, OFFSET);
+          // pix = sourceImg.get(x+slipX, y+slipY);
+  
+          set(x, y, square, pixData);
         }
         // grayscale background filter
         else {
