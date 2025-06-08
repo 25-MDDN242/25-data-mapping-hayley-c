@@ -3,6 +3,8 @@ let maskImg=null;
 let renderCounter=0;
 let curLayer = 0;
 
+let loopCounter = 0;
+
 // change these three lines as appropiate
 let sourceFile = "input_1.jpg";
 let maskFile   = "mask_1.png";
@@ -63,6 +65,8 @@ function draw () {
         stroke(255, 255, 0);
         line(x1, y1, x2, y2);
       }
+      loopCounter++ ;
+      console.log(loopCounter);
     }
     renderCounter = renderCounter + 1;
   }

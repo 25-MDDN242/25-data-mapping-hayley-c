@@ -1,8 +1,14 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jTsmcDjg)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19435023&assignment_repo_type=AssignmentRepo)
 ## Creative Coding + AI II: Custom Pixel
+### Filtered Flowers
+#### *Flora Through a Pixel Lens*
 
-<!-- The images above are photos of Wellington CBD algorithmically processed with a lightly modified version of the [p5.js Pointillism example](https://p5js.org/examples/image-pointillism.html). The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm. -->
+#### By Hayley Chung
+
+<!--  ADD DESCRIPTION The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm. -->
+
+For my final submission, I have chosen to use the AI masks created from inputnew2, input_new3, and input_new4. The AI camera was able to identify the flowers' shape well, however for my specific pixel processing filter the cleaner mask outlines provided better results.
 
 input_5
 input_7
@@ -11,12 +17,7 @@ input_new2
 input_new3
 input_new4
 
-### Precedents
-<img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "300px"/>
-<img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "300px"/>
-<img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "300px"/>
-
-### Images
+#### Images
 | Name | Orginal Image | Attribution | URL |
 | ---- | --------------- | ----------- | --- |
 | input_1 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/61728710/medium.jpeg) | © Eber Barraza  | [iNaturalist Mexico](https://www.inaturalist.org/photos/61728710) |
@@ -36,13 +37,22 @@ input_new4
 | input_new5 | [!Dasiy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/photos/40713926) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
-### Masks
+#### Reflection
 
-For my final submission, I have chosen to use the AI masks created from inputnew2, input_new3, and input_new4. The AI camera was able to identify the flowers' shape well, however for my specific pixel processing filter the cleaner mask outlines provided better results.
+### Process
+#### Precedents
+<img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "300px"/>
+<img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "300px"/>
+<img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "300px"/>
 
+#### Photo Selection
 
+#### Human Made Masks
 
-### Other Outputs
+#### Filter Development
+
+#### Other Outputs
+The additional photos I used to train the AI and for the AI demonstrate its learnings that have not been included in the final submission of this project. These extra training and AI inputs have also had my pixel filter applied to them and these outputs are displayed below.
 
 input_1
 input_2
