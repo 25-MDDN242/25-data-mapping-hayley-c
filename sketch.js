@@ -150,7 +150,6 @@ function draw () {
 
 
         let distortAmplitude = 2.5;
-
         let distortPeriod =   1.5;
       
         let distortX = x + distortAmplitude * sin(x/distortPeriod);
@@ -199,46 +198,48 @@ function draw () {
   }
  
   // mask scanner focus rectangle
-  if (maskCenter !== null) {
+  // if (maskCenter !== null) {
+  else {
+    for(let i=0; i<100; i++) {
+      // identify flower type
+      let flowerType = null;
+      if (isRose == true){
+        flowerType = "rose";
+      }
+      else {
+        flowerType = "daisy";
+      }
 
-    // identify flower type
-    let flowerType = null;
-    if (isRose == true){
-      flowerType = "rose";
+      let boxLeft = maskCenter[0] - maskWidth/2; // flower bounding box left x coordinate
+      let boxTop = maskCenter[1] - maskHeight/2; // flower bounding box top y coordinate
+      let labelLeft = boxLeft - 4; // flower type label background left x coordinate
+      let labelTop = boxTop - 30; // flower type label background top y coordinate
+
+      // bounding box
+      colorMode(RGB);
+      rectMode(CENTER); // bounding box from mask centre
+      strokeWeight(8); // bounding box line weight
+      stroke(255, 255, 255); // white bounding box
+      noFill();
+      rect(maskCenter[0], maskCenter[1], maskWidth, maskHeight); // bounding box rectangle
+
+      // flower type label background
+      let labelWidth = textWidth(flowerType) + 10; // label backing width 
+      rectMode(CORNER); // label from top left corner
+      noStroke();
+      fill(maskCenterPixel); // mask's centre pixel's colour
+      rect(labelLeft, labelTop, labelWidth, 24); // label backing
+
+      // flower type label text
+      noFill();
+      stroke(255, 255, 255); // white text
+      strokeWeight(1.75); // font weight
+      textSize(24); // font size
+      textFont('Courier New'); // courier new typeface
+      text(flowerType, boxLeft, boxTop - 12); // flower type label located at the top left of the flower bounding boz
     }
-    else {
-      flowerType = "daisy";
-    }
-
-    let boxLeft = maskCenter[0] - maskWidth/2; // flower bounding box left x coordinate
-    let boxTop = maskCenter[1] - maskHeight/2; // flower bounding box top y coordinate
-    let labelLeft = boxLeft - 4; // flower type label background left x coordinate
-    let labelTop = boxTop - 30; // flower type label background top y coordinate
-
-    // bounding box
-    colorMode(RGB);
-    rectMode(CENTER); // bounding box from mask centre
-    strokeWeight(8); // bounding box line weight
-    stroke(255, 255, 255); // white bounding box
-    noFill();
-    rect(maskCenter[0], maskCenter[1], maskWidth, maskHeight); // bounding box rectangle
-
-    // flower type label background
-    let labelWidth = textWidth(flowerType) + 10; // label backing width 
-    rectMode(CORNER); // label from top left corner
-    noStroke();
-    fill(maskCenterPixel); // mask's centre pixel's colour
-    rect(labelLeft, labelTop, labelWidth, 24); // label backing
-
-    // flower type label text
-    noFill();
-    stroke(255, 255, 255); // white text
-    strokeWeight(1.75); // font weight
-    textSize(24); // font size
-    textFont('Courier New'); // courier new typeface
-    text(flowerType, boxLeft, boxTop - 12); // flower type label located at the top left of the flower bounding boz
+    renderCounter = renderCounter + 1;
   }
-  renderCounter = renderCounter + 1;
 
   if(curLayer == 0 && renderCounter > 1) {
     curLayer = 1;
@@ -246,6 +247,11 @@ function draw () {
     console.log("change to layer 1")
   }
   else if(curLayer == 1 && renderCounter > 1) {
+    curLayer = 2;
+    renderCounter = 0;
+    print("Switching to curLayer 2");
+  }
+  else if(curLayer == 2 && renderCounter > 1) {
     console.log("Done!")
     noLoop();
     // uncomment this to save the result

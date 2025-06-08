@@ -1,3 +1,5 @@
+<link href="style.css" rel="stylesheet"></link>
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jTsmcDjg)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19435023&assignment_repo_type=AssignmentRepo)
 ## Creative Coding + AI II: Custom Pixel
@@ -56,67 +58,56 @@ With my early iterations of my pixel filter, I found it particularly important f
 Using some of my own photos of flowers, I explored the mechanics of the code, creating a pointalism inspired filter before deciding on the idea of how technology distorts our view of nature, using the following images as precedents.
 
 Precedents:
+
 <img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "300px"/>
 <img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "300px"/>
 <img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "300px"/>
 
 To highight the flower, I tried following the HSB code example to desaturate the background pixels, whilst maintaining the image colours for the masked out flowers.
-
-<img src = "/assets/pointalism.jpg" alt = "Desaturated background contrasting with flower" width = "200"/>
+<img src = "/assets/pointalism.jpg" alt = "Desaturated background contrasting with flower" width = "300"/>
 
 I then began using the layers code example to draw random rectangles over the image to replicate a glitching effect.
+<img src = "/assets/glitchLayer.jpg" alt = "Rectangular glitches on flower" width = "300"/>
 
-<img src = "/assets/glitchLayer.jpg" alt = "Rectangular glitches on flower" width = "200"/>
+To further the idea of viewing flowers through a distorted digital perspective, I wanted to utilized the blob scan effect code to identify the masked flower and then draw a labelled bounding box around it, which would replicate the look of image recognition. For this, I found it important to still have the flower distinguishable to viewers by making it distinct from both the background and the glitch layers. For the flower label, I used the colour of the centre pixel of the masked area for the label background and the corresponding name. I initially tried to use the colour of the mask to differentiate the text within the label, however I was not able to get this code to work and turned to using a switch case statement with the sourceFile variable to change the text. 
+<img src="/assets/boundingBox.jpg" alt="Unclear flower with image recognition" width = "300px">
+*Indistinguishable as a flower*
 
-To further the idea of viewing flowers through a distorted digital perspective, I wanted to utilized the blob scan effect code to identify the masked flower and then draw a labelled bounding box around it, which would replicate the look of image recognition. For this, I found it important to still have the flower distinguishable to viewers by making it distinct from both the background and the glitch layers.
 
-<figure>
-    <img src="/assets/boundingBox.jpg"
-         alt="Unclear flower with image recognition"
-         width = "200px">
-    <figcaption>Indistinguishable as a flower</figcaption>
-</figure>
-<figure>
-    <img src="/assets/withColour.jpg"
-         alt="Flower with image recognition"
-         width = "200px">
-    <figcaption>Recognizable as a flower</figcaption>
-</figure>
+<img src="/assets/withColour.jpg" alt="Flower with image recognition" width = "300px">
+*Recognizable as a flower*
 
-<img src = "/assets/copy.jpg" alt = "Copied image glitches on flower" width = "200"/>
+Looking through the P5.js references, I found the copy() method which could be used to copy a region of pixels from a source image and translate and scale them to a different part of the canvas. I think this effect worked particularly well with creating the appearance of a glitched and distorted flower
+<img src = "/assets/copy.jpg" alt = "Copied image glitches on flower" width = "300"/>
 
-<img src = "/assets/oppositeColour.jpg" alt = "Rectangular glitches of opposite colour on flower" width = "200"/>
+Another idea for the glitching I had was to incorporate the complemenary colour of the flower. However, to avoid too many colours and shades within the output, I chose to justuse the complementary colour of the mask's centre pixel. This was applied to solid random rectangles as well as sections of repeated rectangles.
+<img src = "/assets/oppositeColour.jpg" alt = "Rectangular glitches of opposite colour on flower" width = "300"/>
 
-<figure>
-    <img src="/assets/wavy.jpg"
-         alt="Warping code to make a wavy pattern in flower"
-         width = "200px">
-    <figcaption>Applied the class warping code without altering the variables</figcaption>
-</figure>
-<figure>
-    <img src="/assets/wavyVariables.jpg"
-         alt="Flower with image recognition"
-         width = "200px">
-    <figcaption>Exploration of changing the variables of the class warping code</figcaption>
-</figure>
-<figure>
-    <img src="/assets/squares.jpg"
-         alt="Flower with large pixelation effect"
-         width = "200px">
-    <figcaption>Subtle large pixelation of the flower pixels</figcaption>
-</figure>
+Most of my image manipulations so far are 2D primatives drawn on a different layer, so I wanted to try mainpulating the pixels themselves. I initally started with the warping class example, but I thought the appearance of the green background pixels warped into the flower took away from the image. I later returned to the warping code and adjusted the different variables to see how the output would change. Although, I thought the outcome was actually quite interesting, it wasn't the look I was going after. Another iteration I tried was adapting the distortion filter code from jeffThompson's [CP2: Distorting Images](https://editor.p5js.org/jeffThompson/sketches/amZAWPv9S), changing the variables and wound up with a subtle pixelation effect.
+<img src="/assets/wavy.jpg" alt="Warping code to make a wavy pattern in flower" width = "300px">
+*Applied the class warping code without altering the variables*
 
-<img src = "/assets/pixelate.jpg" alt = "Combination of opposite colour rectangles, barcodes, copied image regions, and subtle pixelation glitches" width = "200"/>
+ 
+<img src="/assets/wavyVariables.jpg" alt="Flower with image recognition" width = "300px">
+*Exploration of changing the variables of the class warping code*
+
+
+<img src="/assets/squares.jpg" alt="Flower with large pixelation effect" width = "300px">
+*Subtle large pixelation of the flower pixels*
+
+
+After trying these different pixel and image mainpulations, I then started combining them and adjusting each to work cohesively together. The solid rectangles became translucent to make if different from the barcode glitches, the widths of thhe bars in the barcodes were randomised to make them more interesting, the size of the pixelation warping became smaller and more noticeable. 
+<img src = "/assets/pixelate.jpg" alt = "Combination of opposite colour rectangles, barcodes, copied image regions, and subtle pixelation glitches" width = "300"/>
 
 
 #### Other Outputs
 The additional photos I used to train the AI and for the AI demonstrate its learnings that have not been included in the final submission of this project. These extra training and AI inputs have also had my pixel filter applied to them and these outputs are displayed below.
 
 
-| Rose Output | ![Output from input_1](input_1.jpg) | ![Output from input_2](input_2.jpg) | ![Output from input_3](input_3.jpg) | ![Output from input_4](input_4.jpg) | ![Output from input_new1](input_new1.jpg) |
 | Rose Input | input_1 | input_2 | input_3 | input_new4 | input_new1 |
-| Daisy Output | [Output from input_6](input_6.jpg) | [Output from input_9](input_9.jpg) | [Output from input_10](input_10.jpg) | [Output from input_new5](input_new5.jpg) | [Output from input_new6](input_6.jpg) |
+| ---------- | ------- | i------ | ------- | ---------- | ---------- |
+| Rose Output | ![Output from input_1](input_1.jpg) | ![Output from input_2](input_2.jpg) | ![Output from input_3](input_3.jpg) | ![Output from input_4](input_4.jpg) | ![Output from input_new1](input_new1.jpg) |
+
 | Daisy Input | input_6 | input_9 | input_10 | input_new5 | input_new6 |
-
-
-
+| ----------- | ------- | ------- | -------- | ---------- | ---------- |
+| Daisy Output | ![Output from input_6](input_6.jpg) | ![Output from input_9](input_9.jpg) | ![Output from input_10](input_10.jpg) | ![Output from input_new5](input_new5.jpg) | ![Output from input_new6](input_6.jpg) |
