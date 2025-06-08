@@ -9,8 +9,6 @@ let barcode = [];
 let isDaisy = false;
 let isRose = false; 
 
-let loopCounter = 0;
-
 // change these three lines as appropiate
 let sourceFile = "input_7.jpg";
 let maskFile = "mask_7.png";
@@ -150,14 +148,14 @@ function draw () {
         let maskData = maskImg.get(x, y);
         colorMode(HSB, 360, 100, 100);
 
-        let wavinessX = 2.5;  // smaller number = fewer repetitions
-        let wavinessY = 2.5;
-        let periodX =   2.5;  // smaller number = more
-        let periodY =   2.5;
+
+        let distortAmplitude = 2.5;
+
+        let distortPeriod =   1.5;
       
-        let tempX = x + wavinessX * sin(x/periodX);
-        let tempY = y + wavinessY * cos(y/periodY);
-        let squares = sourceImg.get(tempX, tempY);
+        let distortX = x + distortAmplitude * sin(x/distortPeriod);
+        let distortY = y + distortAmplitude * cos(y/distortPeriod);
+        let pixelate = sourceImg.get(distortX, distortY);
 
         let pixelBrightness = brightness(pixData);
         let newBrightness = map(pixelBrightness, 0, 100, 50, 100);
@@ -166,7 +164,7 @@ function draw () {
 
         // image colours for masked area
         if(maskData[0] > 128){
-          set(x, y, squares, pixData); 
+          set(x, y, pixelate, pixData); 
         }
         // grayscale background filter
         else {

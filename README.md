@@ -8,6 +8,8 @@
 
 <!--  ADD DESCRIPTION The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm. -->
 
+The photos for this project have been sourced from iNaturalist, as it was a 
+
 For my final submission, I have chosen to use the AI masks created from inputnew2, input_new3, and input_new4. The AI camera was able to identify the flowers' shape well, however for my specific pixel processing filter the cleaner mask outlines provided better results.
 
 input_5
@@ -17,18 +19,27 @@ input_new2
 input_new3
 input_new4
 
-#### Images
+#### Reflection
+Although I had a clear idea of how I wanted my final output to look most of the time, I found it somewhat difficult to achieve, being unfamiliar with image and pixel mainpulation in creative coding contexts and working within the structure of the code base. The theme and direction of this project has many possible options that it could be taken within beyond the assignment. Apart from further iterating the pixel filter, possible futher developments could be to explore the training of the AI to differentiate different flowers which I briefly tried, or to create completely different pixel filters for different flowers and delve into a themematic project on how different species of flowers are perceived.
+
+### Process
+
+#### Photo Selection
+For this project, I wanted to focus on the creating the pixel.
+
+After exploring the code base and the blob scan code example, I changed the photos to ones that had a singular flower as the focus to be able to use the blob scan code.
+
 | Name | Orginal Image | Attribution | URL |
 | ---- | --------------- | ----------- | --- |
 | input_1 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/61728710/medium.jpeg) | © Eber Barraza  | [iNaturalist Mexico](https://www.inaturalist.org/photos/61728710) |
-| input_2 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/271637974/medium.jpeg) | © vojtar | [iNaturalist](https://www.inaturalist.org/photos/271637974) |
-| input_3 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/478851874/medium.jpeg) | © valhera  | [iNaturalist](https://www.inaturalist.org/photos/478851874) |
-| input_4 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.JPG) | © Donna Pomeroy | [iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
-| input_5 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/41140535/medium.jpg) |  © Evan M. Raskin | [iNaturalist](https://www.inaturalist.org/photos/41140535) |
-| input_6 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/63293825/medium.jpg) | © Yi CHEN | https://www.inaturalist.org/photos/63293825 |
-| input_7 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605272/medium.jpg) |  © Milan Kovačević  | [iNaturalist Canada](https://www.inaturalist.org/photos/388605272) |
-| input_8 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/217876098/medium.jpeg) | © bsteer | [iNaturalist Canada](https://www.inaturalist.org/photos/217876098)  |
-| input_9 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovačević  | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
+| input_2 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/478851874/medium.jpeg) | © valhera  | [iNaturalist](https://www.inaturalist.org/photos/478851874) |
+| input_3 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/41140535/medium.jpg) |  © Evan M. Raskin | [iNaturalist](https://www.inaturalist.org/photos/41140535) |
+| input_4 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605272/medium.jpg) |  © Milan Kovačević  | [iNaturalist Canada](https://www.inaturalist.org/photos/388605272) |
+| input_5 | ![Rose training image](https://inaturalist-open-data.s3.amazonaws.com/photos/388605398/medium.jpg) |  © Milan Kovačević  | [iNaturalist](https://www.inaturalist.org/photos/388605398) |
+| input_6 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/271637974/medium.jpeg) | © vojtar | [iNaturalist](https://www.inaturalist.org/photos/271637974) |
+| input_7 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/337990/medium.JPG) | © Donna Pomeroy | [iNaturalist Canada](https://www.inaturalist.org/photos/337990) |
+| input_8 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/63293825/medium.jpg) | © Yi CHEN | https://www.inaturalist.org/photos/63293825 |
+| input_9 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/217876098/medium.jpeg) | © bsteer | [iNaturalist Canada](https://www.inaturalist.org/photos/217876098)  |
 | input_10 | ![Daisy training image](https://inaturalist-open-data.s3.amazonaws.com/photos/40495365/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40495365)  |
 | input_new1 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/388605481/medium.jpg) | © Milan Kovačević | [iNaturalist](https://www.inaturalist.org/photos/388605481) |
 | input_new2 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/429269785/medium.jpg) | © Татьяна Химера | [iNaturalist](https://www.inaturalist.org/photos/429269785) |
@@ -37,33 +48,75 @@ input_new4
 | input_new5 | [!Dasiy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/photos/40713926) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
-#### Reflection
+### Masks & AI Training
+With my early iterations of my pixel filter, I found it particularly important for the masks to be very neat 
 
-### Process
-#### Precedents
+
+#### Filter Development
+Using some of my own photos of flowers, I explored the mechanics of the code, creating a pointalism inspired filter before deciding on the idea of how technology distorts our view of nature, using the following images as precedents.
+
+Precedents:
 <img src = "/assets/barcodeFlower.png" alt = "Distorted flower to form barcodes" width = "300px"/>
 <img src = "https://cdn.cosmos.so/8b16cb07-fb2f-47ac-a34e-ceb496506399?format=jpeg" alt = "Blob tracking flower" width = "300px"/>
 <img src = "https://i.pinimg.com/736x/92/10/ee/9210ee9f67b3ef86c95b3ebab499eee9.jpg" alt = "Pixelated and distorted abstract shape" width = "300px"/>
 
-#### Photo Selection
+To highight the flower, I tried following the HSB code example to desaturate the background pixels, whilst maintaining the image colours for the masked out flowers.
 
-#### Human Made Masks
+<img src = "/assets/pointalism.jpg" alt = "Desaturated background contrasting with flower" width = "200"/>
 
-#### Filter Development
+I then began using the layers code example to draw random rectangles over the image to replicate a glitching effect.
+
+<img src = "/assets/glitchLayer.jpg" alt = "Rectangular glitches on flower" width = "200"/>
+
+To further the idea of viewing flowers through a distorted digital perspective, I wanted to utilized the blob scan effect code to identify the masked flower and then draw a labelled bounding box around it, which would replicate the look of image recognition. For this, I found it important to still have the flower distinguishable to viewers by making it distinct from both the background and the glitch layers.
+
+<figure>
+    <img src="/assets/boundingBox.jpg"
+         alt="Unclear flower with image recognition"
+         width = "200px">
+    <figcaption>Indistinguishable as a flower</figcaption>
+</figure>
+<figure>
+    <img src="/assets/withColour.jpg"
+         alt="Flower with image recognition"
+         width = "200px">
+    <figcaption>Recognizable as a flower</figcaption>
+</figure>
+
+<img src = "/assets/copy.jpg" alt = "Copied image glitches on flower" width = "200"/>
+
+<img src = "/assets/oppositeColour.jpg" alt = "Rectangular glitches of opposite colour on flower" width = "200"/>
+
+<figure>
+    <img src="/assets/wavy.jpg"
+         alt="Warping code to make a wavy pattern in flower"
+         width = "200px">
+    <figcaption>Applied the class warping code without altering the variables</figcaption>
+</figure>
+<figure>
+    <img src="/assets/wavyVariables.jpg"
+         alt="Flower with image recognition"
+         width = "200px">
+    <figcaption>Exploration of changing the variables of the class warping code</figcaption>
+</figure>
+<figure>
+    <img src="/assets/squares.jpg"
+         alt="Flower with large pixelation effect"
+         width = "200px">
+    <figcaption>Subtle large pixelation of the flower pixels</figcaption>
+</figure>
+
+<img src = "/assets/pixelate.jpg" alt = "Combination of opposite colour rectangles, barcodes, copied image regions, and subtle pixelation glitches" width = "200"/>
+
 
 #### Other Outputs
 The additional photos I used to train the AI and for the AI demonstrate its learnings that have not been included in the final submission of this project. These extra training and AI inputs have also had my pixel filter applied to them and these outputs are displayed below.
 
-input_1
-input_2
-input_3
-input_4
-input_6
-input_9
-input_10
 
-input_new1
-input_new5
-input_new6
+| Rose Output | ![Output from input_1](input_1.jpg) | ![Output from input_2](input_2.jpg) | ![Output from input_3](input_3.jpg) | ![Output from input_4](input_4.jpg) | ![Output from input_new1](input_new1.jpg) |
+| Rose Input | input_1 | input_2 | input_3 | input_new4 | input_new1 |
+| Daisy Output | [Output from input_6](input_6.jpg) | [Output from input_9](input_9.jpg) | [Output from input_10](input_10.jpg) | [Output from input_new5](input_new5.jpg) | [Output from input_new6](input_6.jpg) |
+| Daisy Input | input_6 | input_9 | input_10 | input_new5 | input_new6 |
+
 
 
