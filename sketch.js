@@ -10,9 +10,9 @@ let isDaisy = false;
 let isRose = false; 
 
 // change these three lines as appropiate
-let sourceFile = "input_7.jpg";
-let maskFile = "mask_7.png";
-let outputFile = "output_5.png";
+let sourceFile = "input_new6.jpg";
+let maskFile = "mask_new6.png";
+let outputFile = "output_input_new6.png";
 
 function preload() {
   sourceImg = loadImage(sourceFile);
