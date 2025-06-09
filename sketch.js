@@ -10,9 +10,9 @@ let isDaisy = false;
 let isRose = false; 
 
 // change these three lines as appropiate
-let sourceFile = "input_new6.jpg";
-let maskFile = "mask_new6.png";
-let outputFile = "output_input_new6.png";
+let sourceFile = "input_new4.jpg";
+let maskFile = "mask_new4.png";
+let outputFile = "output_6.png";
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -33,7 +33,9 @@ function setup () {
   maskCenterSearcher(20);
   maskSizeFinder(20);
 
-  switch(sourceFile){
+  // flower type switch case statement 
+  switch (sourceFile){
+    // rose source files
     case "input_1.jpg":
     case "input_2.jpg":
     case "input_3.jpg":
@@ -46,6 +48,7 @@ function setup () {
       isDaisy = false;
       break;
 
+    // daisy source files
     case "input_6.jpg":
     case "input_7.jpg":
     case "input_8.jpg":
@@ -187,6 +190,7 @@ function draw () {
     renderCounter = renderCounter + 1;
     updatePixels();
   }
+
   // glitch effects 
   else if(curLayer == 1){
     for(let i = 0; i < 50 ; i++) {
@@ -203,7 +207,7 @@ function draw () {
         // opposite tint rectangle at random x and y coordinates
         rectTint(x1, y1, maskCenterPixel);
         // random image regions copies
-        maskGlitch(x1, y1, x2, y2, pixData);
+        copyGlitch(x1, y1, x2, y2, pixData);
         // opposite colour barcodes at random x and y coordinates
         barcodes(x1, y1, maskCenterPixel);
       }
@@ -211,17 +215,16 @@ function draw () {
     renderCounter = renderCounter + 1;
   }
  
-  // mask scanner focus rectangle
-  // if (maskCenter !== null) {
+  // flower recognition
   else {
-    for(let i=0; i<100; i++) {
+    for (let i=0; i<100; i++) {
       // identify flower type
       let flowerType = null;
       if (isRose == true){
-        flowerType = "rose";
+        flowerType = "rose"; // rose source image: label as a rose
       }
       else {
-        flowerType = "daisy";
+        flowerType = "daisy"; // daisy source image: label as a daisy
       }
 
       // flower identifier variables
@@ -288,7 +291,7 @@ function keyTyped() {
 }
 
 // image regions copies at random x and y coordinates
-function maskGlitch(x1, y1, x2, y2, pixData){
+function copyGlitch(x1, y1, x2, y2, pixData){
   // image pixel regions 
   let sourceWidth = random(25, 50); // copy source width
   let sourceHeight = random(25, 50); // copy source height
