@@ -40,54 +40,67 @@ The final submission displays the outputs from the training images: ***input_5**
 ### Filter Development
 Using some of my own photos of flowers, I explored the mechanics of the code, creating a pointalism inspired filter before deciding on the idea of how technology distorts our view of nature, using the following images as precedents.
 
-### Precedents
-| ![Glitched flower](/assets/glitchedFlower.png) | ![Blob tracking flower](/assets/blobTracking.png) | ![Abstract glitch](/assets/abstractGlitch.png) |
+#### Precedents
+| ![Glitched flower](/assets/documentation/glitchedFlower.png) | ![Blob tracking flower](/assets/documentation/blobTracking.png) | ![Abstract glitch](/assets/documentation/abstractGlitch.png) |
 | ----------- | ----------- | ----------- |
 | [Pinterest](https://nz.pinterest.com/pin/831688256216836236/) | [Pinterest](https://nz.pinterest.com/pin/633459503852463968/) | [DNA - Justin Johnson](https://www.behance.net/gallery/62895145/DNA) |
 
+#### HSB Desaturating Background
 To highight the flower, I tried following the HSB code example to desaturate the background pixels, whilst maintaining the image colours for the masked out flowers.
 
-<img src = "/assets/pointalism.jpg" alt = "Desaturated background contrasting with flower" width = "300"/>
+<img src = "/assets/documentation/pointalism.jpg" alt = "Desaturated background contrasting with flower" width = "300"/>
 
+#### Glitching Rectangles
 I then began using the layers code example to draw random rectangles over the image to replicate a glitching effect.
 
-<img src = "/assets/glitchLayer.jpg" alt = "Rectangular glitches on flower" width = "300"/>
+<img src = "/assets/documentation/glitchLayer.jpg" alt = "Rectangular glitches on flower" width = "300"/>
 
+#### Flower Recognition
 To further the idea of viewing flowers through a distorted digital perspective, I wanted to utilized the blob scan effect code to identify the masked flower and then draw a labelled bounding box around it, which would replicate the look of image recognition. For this, I found it important to still have the flower distinguishable to viewers by making it distinct from both the background and the glitch layers. For the flower label, I used the colour of the centre pixel of the masked area for the label background and the corresponding name. I initially tried to use the colour of the mask to differentiate the text within the label, which is why the masks for the roses have been edited to a shade of gray. However, I was not able to get this to wotk within my existing code structure as it either struggled to find the mask data or the array of words, so I turned to using a switch case statement with the sourceFile variable to change the text. 
 
 *Indistinguishable as a flower:*
 
-<img src="/assets/boundingBox.jpg" alt="Unclear flower with image recognition" width = "300px">
+<img src="/assets/documentation/boundingBox.jpg" alt="Unclear flower with image recognition" width = "300px">
 
 *Recognizable as a flower:*
 
-<img src="/assets/withColour.jpg" alt="Flower with image recognition" width = "300px">
+<img src="/assets/documentation/withColour.jpg" alt="Flower with image recognition" width = "300px">
 
+#### Copying Image Regions
 Looking through the P5.js references, I found the copy() method which could be used to copy a region of pixels from a source image and translate and scale them to a different part of the canvas. I think this effect worked particularly well with creating the appearance of a glitched and distorted flower.
 
-<img src = "/assets/copy.jpg" alt = "Copied image glitches on flower" width = "300"/>
+*Implementing copy method:*
 
+<img src = "/assets/documentation/copy.jpg" alt = "Copied image glitches on flower" width = "300"/>
+
+*Contained copy effect to masked area:*
+
+<img src = "/assets/documentation/copyContained.jpg" alt = "Copied image glitches on flower" width = "300"/>
+
+#### Complementary Colour Glitches
 Another idea for the glitching I had was to incorporate the complemenary colour of the flower. However, to avoid too many colours and shades within the output, I chose to just use the complementary colour of the mask's centre pixel. This was applied to solid random rectangles as well as sections of repeated rectangles.
 
-<img src = "/assets/oppositeColour.jpg" alt = "Rectangular glitches of opposite colour on flower" width = "300"/>
+<img src = "/assets/documentation/oppositeColour.jpg" alt = "Rectangular glitches of opposite colour on flower" width = "300"/>
 
+#### Warping Mask's Image Pixels
 Most of my image manipulations so far are 2D primatives drawn on a different layer, so I wanted to try mainpulating the pixels themselves. I initally started with the warping class example, but I thought the appearance of the green background pixels warped into the flower took away from the image. I later returned to the warping code and adjusted the different variables to see how the output would change. Although, I thought the outcome was actually quite interesting, it wasn't the look I was going after. Another iteration I tried was adapting the distortion filter code from jeffThompson's [CP2: Distorting Images](https://editor.p5js.org/jeffThompson/sketches/amZAWPv9S), changing the variables and wound up with a subtle pixelation effect.
 
 *Applied the class warping code without altering the variables:*
 
-<img src="/assets/wavy.jpg" alt="Warping code to make a wavy pattern in flower" width = "300px">
+<img src="/assets/documentation/wavy.jpg" alt="Warping code to make a wavy pattern in flower" width = "300px">
 
  *Exploration of changing the variables of the class warping code:*
 
-<img src="/assets/wavyVariables.jpg" alt="Flower with image recognition" width = "300px">
+<img src="/assets/documentation/wavyVariables.jpg" alt="Flower with image recognition" width = "300px">
 
 *Subtle large pixelation of the flower pixels:*
 
-<img src="/assets/squares.jpg" alt="Flower with large pixelation effect" width = "300px">
+<img src="/assets/documentation/squares.jpg" alt="Flower with large pixelation effect" width = "300px">
 
+#### Combining Glitching Effects and Refining
 After trying these different pixel and image mainpulations, I then started combining them and adjusting each to work cohesively together. The solid rectangles became translucent to make if different from the barcode glitches, the widths of thhe bars in the barcodes were randomised to make them more interesting, the size of the pixelation warping became smaller and more noticeable. 
 
-<img src = "/assets/pixelate.jpg" alt = "Combination of opposite colour rectangles, barcodes, copied image regions, and subtle pixelation glitches" width = "300"/>
+<img src = "/assets/documentation/pixelate.jpg" alt = "Combination of opposite colour rectangles, barcodes, copied image regions, and subtle pixelation glitches" width = "300"/>
 
 
 #### Other Outputs
