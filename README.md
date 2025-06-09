@@ -74,10 +74,12 @@ I then began using the layers code example to draw random rectangles over the im
 To further the idea of viewing flowers through a distorted digital perspective, I wanted to utilized the blob scan effect code to identify the masked flower and then draw a labelled bounding box around it, which would replicate the look of image recognition. For this, I found it important to still have the flower distinguishable to viewers by making it distinct from both the background and the glitch layers. For the flower label, I used the colour of the centre pixel of the masked area for the label background and the corresponding name. I initially tried to use the colour of the mask to differentiate the text within the label, however I was not able to get this code to work and turned to using a switch case statement with the sourceFile variable to change the text. 
 
 <img src="/assets/boundingBox.jpg" alt="Unclear flower with image recognition" width = "300px">
+
 *Indistinguishable as a flower*
 
 
 <img src="/assets/withColour.jpg" alt="Flower with image recognition" width = "300px">
+
 *Recognizable as a flower*
 
 Looking through the P5.js references, I found the copy() method which could be used to copy a region of pixels from a source image and translate and scale them to a different part of the canvas. I think this effect worked particularly well with creating the appearance of a glitched and distorted flower
@@ -91,14 +93,17 @@ Another idea for the glitching I had was to incorporate the complemenary colour 
 Most of my image manipulations so far are 2D primatives drawn on a different layer, so I wanted to try mainpulating the pixels themselves. I initally started with the warping class example, but I thought the appearance of the green background pixels warped into the flower took away from the image. I later returned to the warping code and adjusted the different variables to see how the output would change. Although, I thought the outcome was actually quite interesting, it wasn't the look I was going after. Another iteration I tried was adapting the distortion filter code from jeffThompson's [CP2: Distorting Images](https://editor.p5js.org/jeffThompson/sketches/amZAWPv9S), changing the variables and wound up with a subtle pixelation effect.
 
 <img src="/assets/wavy.jpg" alt="Warping code to make a wavy pattern in flower" width = "300px">
+
 *Applied the class warping code without altering the variables*
 
  
 <img src="/assets/wavyVariables.jpg" alt="Flower with image recognition" width = "300px">
+
 *Exploration of changing the variables of the class warping code*
 
 
 <img src="/assets/squares.jpg" alt="Flower with large pixelation effect" width = "300px">
+
 *Subtle large pixelation of the flower pixels*
 
 
