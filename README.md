@@ -34,7 +34,7 @@ The final submission displays the outputs from the training images: ***input_5**
 | input_new2 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/429269785/medium.jpg) | © Татьяна Химера | [iNaturalist](https://www.inaturalist.org/photos/429269785) |
 | input_new3 | ![Rose image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/273663408/small.jpeg) | © Eric Johnson | [iNaturalist](https://www.inaturalist.org/photos/273663408) |
 | input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |
-| input_new5 | [!Dasiy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/observations/14371808) |
+| input_new5 | [!Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/observations/14371808) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
 
 ### Filter Development
