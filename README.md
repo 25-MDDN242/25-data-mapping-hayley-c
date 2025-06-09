@@ -4,22 +4,18 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19435023&assignment_repo_type=AssignmentRepo)
 ## Creative Coding + AI II: Custom Pixel
 ### Filtered Flowers
-#### *Flora Through a Pixel Lens*
+#### Flora Through a Pixel Lens
+##### *By Hayley Chung*
 
-#### By Hayley Chung
+> Filtered Flowers is an creative exploration of how viewing nature through a digital lens distorts our perception of it. This project specifically focuses on flowers within nature, which despite still being able to recognize their beauty, we aren't fully appreciating it in its naturality. This project focuses on roses and daisies for the differences in how we percieve the two types of flowers, but through the digital lens as pixels they became the interchangeable.
 
-<!--  ADD DESCRIPTION The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm. -->
+The training concept for the AI was initially to have the AI be able to differentiate the two flowers, however, with each image only containing a single flower, I decided to shift away from this concept for the scope of this project. 
 
-The photos for this project have been sourced from iNaturalist, as it was a 
+The photos for this project have been sourced from iNaturalist, as it possesses a large library of photos of flowers, including roses and daisies. I chose to use these photos from iNaturalist, because the photographs are preferable to what I would have been able to capture myself at this time of year with my photography skills. When selecting photos I tried to include a variety of photos that vary in their composition and angle of a single highlighted flower, so I experimented with many different images for a curated selection of images. The attributions are listed in the process documentation. 
 
-For my final submission, I have chosen to use the AI masks created from inputnew2, input_new3, and input_new4. The AI camera was able to identify the flowers' shape well, however for my specific pixel processing filter the cleaner mask outlines provided better results.
+After exploring the code base and different filters, I found it particularly important for the masks to be very neat for both training the AI to identify a clean mask area and for using as an input into the code. 
 
-input_5
-input_7
-input_8
-input_new2
-input_new3
-input_new4
+The final submission displays the outputs from the training images: input_5, input_7, and input_8, and the AI images: input_new2, input_new3, and input_new4. These photos are the most refined from the range of images used in the project. 
 
 #### Reflection
 Although I had a clear idea of how I wanted my final output to look most of the time, I found it somewhat difficult to achieve, being unfamiliar with image and pixel mainpulation in creative coding contexts and working within the structure of the code base. The theme and direction of this project has many possible options that it could be taken within beyond the assignment. Apart from further iterating the pixel filter, possible futher developments could be to explore the training of the AI to differentiate different flowers which I briefly tried, or to create completely different pixel filters for different flowers and delve into a themematic project on how different species of flowers are perceived.
@@ -27,9 +23,6 @@ Although I had a clear idea of how I wanted my final output to look most of the 
 ### Process
 
 #### Photo Selection
-For this project, I wanted to focus on the creating the pixel.
-
-After exploring the code base and the blob scan code example, I changed the photos to ones that had a singular flower as the focus to be able to use the blob scan code.
 
 | Name | Orginal Image | Attribution | URL |
 | ---- | --------------- | ----------- | --- |
@@ -49,10 +42,6 @@ After exploring the code base and the blob scan code example, I changed the phot
 | input_new4 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/40713926/medium.jpeg) | © Kat | [iNaturalist Canada](https://www.inaturalist.org/photos/40713926) |
 | input_new5 | [!Dasiy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/21365414/medium.jpg) | © ࣪࣪tobypcr| [iNaturalist](https://www.inaturalist.org/photos/40713926) |
 | input_new6 | ![Daisy image for AI](https://inaturalist-open-data.s3.amazonaws.com/photos/508624440/medium.jpg) | 	© 林棋欽 | [愛自然-臺灣(iNaturalist Taiwan)](https://www.inaturalist.org/photos/508624440) |
-
-### Masks & AI Training
-With my early iterations of my pixel filter, I found it particularly important for the masks to be very neat 
-
 
 #### Filter Development
 Using some of my own photos of flowers, I explored the mechanics of the code, creating a pointalism inspired filter before deciding on the idea of how technology distorts our view of nature, using the following images as precedents.
